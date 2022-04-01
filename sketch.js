@@ -9,7 +9,7 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(600, 600);
+  createCanvas(1800, 1800);
 }
 
 function draw(){
@@ -30,11 +30,15 @@ function draw(){
 
 
       noStroke();
-      fill(avg);
+      // fill(avg); // Here you can add opacity as well
+      fill(255);
+
+      const len = density.length;
+      const charIndex = floor(map(avg, 0, 255, len, 0));
       // square(i*w, j*h, w);
       textSize(w);
       textAlign(CENTER, CENTER);
-      text('G', i * w + w * .5, j * h + h * .5);
+      text(density.charAt(charIndex), i * w + w * .5, j * h + h * .5);
     }
   }
 }
