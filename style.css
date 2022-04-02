@@ -4,9 +4,22 @@ html, body {
   background-color: black;
 }
 
-canvas {
-  display: block;
-  height: 100vh;
+main {
+  display: grid;
+  grid-template-columns: 20rem auto;
   width: 100vw;
-  margin: auto;
+  height: 100vh;
+  overflow: hidden;
+}
+.controls {
+  grid-column: 1;
+  width: 20rem;
+  background-color: aliceblue;
+}
+
+#canvas-container {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

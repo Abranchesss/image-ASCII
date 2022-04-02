@@ -3,15 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Sketch</title>
-
     <link rel="stylesheet" type="text/css" href="style.css">
-
-    <script src="libraries/p5.min.js"></script>
   </head>
 
   <body>
+    <main>
+      <div class="controls">
+        <h1>Image => ASCII</h1>
+        <h3>Controls</h3>
+        <p>Type an ASCII Shader:</p>
+        <input id="ascii-shader" type="text" value="Ñ@#W$9876543210?!abc;:+=-,._ ">
+        <p>Select an image (.png | .jpg):</p>
+        <input id="img-path" type="file" accept=".png, .jpg">
+        <p>Letters Size (increase if the Image has a High Resolution):</p>
+        <input id="letters-size" type="range" min="1" max="15" value="5" oninput="this.nextElementSibling.value = this.value">
+        <output>5</output>
+        <p>Sampling mode:</p>
+        <input id="radio1" type="radio" name="sampling-mode" value="1"><label for="radio1">1 (ignores neighbour pixels)</label><br>
+        <input id="radio2" type="radio" name="sampling-mode" value="2" checked><label for="radio2">2 (average of neighbour pixels)</label>
+        <p>Opacity:</p>
+        <input id="opacity" id="checkbox" type="checkbox" checked><label for="checkbox">Enable letters opacity</label>
+        <p>Brightness:</p>
+        <input id="brightness" type="range" min="0" max="5" step=".1" value="1" oninput="this.nextElementSibling.value = this.value">
+        <output>1</output>
+        <p>White Cutoff:</p>
+        <input id="white-cutoff" type="range" min="0" max="10" value="0" oninput="this.nextElementSibling.value = this.value">
+        <output>0</output>
+        <br>
+        <button onclick="GenerateTheImage()">Generate!</button>
+      </div>
+      <div id="canvas-container"></div>
+    </main>
+
+    <script src="libraries/p5.min.js"></script>
     <script src="sketch.js"></script>
+    <script src="controls.js"></script>
   </body>
 </html>
