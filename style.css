@@ -29,6 +29,9 @@ main {
   color: white;
   padding: 2rem;
 }
+.controls h1{
+  margin-top: 0;
+}
 .controls h1,
 .controls h3{
   text-align: center;
